@@ -64,3 +64,7 @@ PYTHONPATH=src uvicorn healthdash.main:app --reload
 Thresholds default to warn at 80 and critical at 90. Change them with `HEALTH_WARN_PERCENT` and `HEALTH_CRITICAL_PERCENT`. History keeps 60 snapshots in memory; change that with `HEALTH_HISTORY`.
 
 A mount that is not a directory is refused. This does not SSH to other machines and it does not open a firewall rule.
+
+## Ops plane
+
+Workspaces, tenant isolation, job approval, and audit live under `/v1`. Production apply is refused. See `docs/ARCHITECTURE.md`.

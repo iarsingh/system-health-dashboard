@@ -1,3 +1,4 @@
+from healthdash.ops import router as ops_router
 import os
 
 from fastapi import FastAPI, HTTPException, Query
@@ -6,6 +7,7 @@ from fastapi.responses import HTMLResponse, PlainTextResponse
 from healthdash.host import HISTORY, prometheus, snapshot
 
 app = FastAPI(title="System health")
+app.include_router(ops_router, prefix="/v1")
 
 
 def checked_mounts(mounts):

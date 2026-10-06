@@ -68,3 +68,13 @@ A mount that is not a directory is refused. This does not SSH to other machines 
 ## Ops plane
 
 Workspaces, tenant isolation, job approval, and audit live under `/v1`. Production apply is refused. See `docs/ARCHITECTURE.md`.
+
+## Documentation checks
+
+Project architecture, interview guides, and local source links are checked automatically on pushes and pull requests. Run the same check locally:
+
+```bash
+python3 .github/scripts/validate_project_docs.py
+```
+
+See [service improvements and local run instructions](docs/UPGRADES.md).
